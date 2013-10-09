@@ -62,7 +62,7 @@
             {
                 if(xmlhttp.readState==4 && xml.status==200)
                 {
-                    document.getElementById('input').innerText = xmlhttp.responseText;
+                    document.getElementById('input').value = xmlhttp.responseText;
                 }
             };
 
