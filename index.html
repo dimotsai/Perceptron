@@ -18,6 +18,18 @@
     <canvas width="800" height="600" id="screen"></canvas>
     <label for="file">Input files: (Support: Chrome, IE10, Firefox)</label><br>
     <input id="file" type="file"><br>
+    <div><a href="samples/2Ccircle1.txt" class="inputs">2Ccircle1.txt</a>
+        <a href="samples/2Circle1.txt" class="inputs">2Circle1.txt</a>
+        <a href="samples/2Circle2.txt" class="inputs">2Circle2.txt</a>
+        <a href="samples/2class.txt" class="inputs">2class.txt</a>
+        <a href="samples/2CloseS.txt" class="inputs">2CloseS.txt</a>
+        <a href="samples/2CloseS2.txt" class="inputs">2CloseS2.txt</a>
+        <a href="samples/2CloseS3.txt" class="inputs">2CloseS3.txt</a>
+        <a href="samples/2cring.txt" class="inputs">2cring.txt</a>
+        <a href="samples/2CS.txt" class="inputs">2CS.txt</a>
+        <a href="samples/2Hcircle1.txt" class="inputs">2Hcircle1.txt</a>
+        <a href="samples/2ring.txt" class="inputs">2ring.txt</a>
+    </div>
     <label for="input">Input:</label><br>
     <textarea name="input" id="input" cols="60" rows="5"></textarea><br>
     <label for="input">Training Data:</label><br>
@@ -42,5 +54,28 @@
     <p>已實作：多維感知機，大於二維將不顯示在圖中。</p>
      <p>以測試：感知機1.txt,感知機2.txt,感知機3.txt，2Ccircle1，2Circle1，2 Circle2，2CloseS，2 CloseS2， 2CloseS3，2cring，2CS，2Hcircle1，2ring，跑 二維資料並顯示圖形(包括資料點與線段)。</p>
     <script src="script.js"></script>
+    <script>
+        var getContent = function (e)
+        {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function()
+            {
+                if(xmlhttp.readState==4 && xml.status==200)
+                {
+                    document.getElementById('input').innerText = xmlhttp.responseText;
+                }
+            };
+
+            xmlhttp.open('GET', this.href, true);
+            xmlhttp.send();
+            return false;
+        }
+
+        var links = document.getElementsByClassName('inputs');
+        for(var i in links)
+        {
+            links[i].onclick = getContent;
+        }
+    </script>
 </body>
 </html>
