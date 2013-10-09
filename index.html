@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NeuralNetwork</title>
+    <style>
+        #screen
+        {
+            border: 1px solid #000;
+            float: left;
+            margin-top: 50px;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="800" height="600" id="screen"></canvas>
+    <label for="file">Input files: (Support: Chrome, IE10, Firefox)</label><br>
+    <input id="file" type="file"><br>
+    <label for="input">Input:</label><br>
+    <textarea name="input" id="input" cols="60" rows="5"></textarea><br>
+    <label for="input">Training Data:</label><br>
+    <textarea name="train-data" id="train-data" cols="60" rows="5"></textarea><br>
+    <label for="input">Testing Data:</label><br>
+    <textarea name="test-data" id="test-data" cols="60" rows="5"></textarea><br>
+    <label for="output">Output:</label><br>
+    <textarea name="output" id="output" cols="60" rows="5" readonly></textarea><br>
+    <label for="text">Learning Rate:</label><input id="rate" name="rate" type="text" value="0.8"><br>
+    <label>Condition:</label>
+    <!-- <input id="condition-rd" name="condition" type="radio" checked> -->
+    <label for="condition-rd">Rounds</label>
+    <input id="condition-rd-value" name="condition-rd" value="3" type="text">
+    <!-- <input id="condition-acc" name="condition" type="radio"> -->
+    <label for="condition-acc">Accuracy</label>
+    <input id="condition-acc-value" name="condition-acc" value="0.6" type="text"><br>
+    <label for="text">Animation Time:</label><input id="duration" name="duration" value="5" type="text"><br>    
+    <label for="train-accuracy">Training Accuracy: </label><input id="train-accuracy" name="train-accuracy" type="text" readonly><br>
+    <label for="test-accuracy">Testing Accuracy: </label><input id="test-accuracy" name="test-accuracy" type="text" readonly><br>
+
+    <button id="divide">Divide Data</button><button id="train">Train</button><button id="calculate">Test</button><button id="clear">Clear</button><br><br><br>
+    <p>已實作：多維感知機，大於二維將不顯示在圖中。</p>
+     <p>以測試：感知機1.txt,感知機2.txt,感知機3.txt，2Ccircle1，2Circle1，2 Circle2，2CloseS，2 CloseS2， 2CloseS3，2cring，2CS，2Hcircle1，2ring，跑 二維資料並顯示圖形(包括資料點與線段)。</p>
+    <script src="script.js"></script>
+</body>
+</html>
