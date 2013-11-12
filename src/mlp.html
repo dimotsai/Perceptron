@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MLP</title>
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <style>
+        body{
+            font-family: 'Inconsolata', sans-serif; 
+            font-size: 14pt;
+        }
+        #screen
+        {
+            border: 1px solid #000;
+        }
+        .left
+        {
+            text-align: center;
+            display: block;
+            float: left;
+            width: 820px;
+        }
+        .right
+        {
+            display: block;
+            float: left;
+            width: 666px;
+        }
+        .inner
+        {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <canvas width="800" height="600" id="screen"></canvas>
+    </div>
+    <div class="right">
+        <div class="inner">
+            <label for="file">Input files: (Support: Chrome, IE10, Firefox)</label><br>
+            <input id="file" type="file"><br>
+            <label for="input">Input:</label><br>
+            <textarea name="input" id="input" cols="60" rows="5"></textarea><br>
+            <label for="input">Training Data:</label><br>
+            <textarea name="train-data" id="train-data" cols="60" rows="5"></textarea><br>
+            <label for="input">Testing Data:</label><br>
+            <textarea name="test-data" id="test-data" cols="60" rows="5"></textarea><br>
+            <label for="output">Output:</label><br>
+            <textarea name="output" id="output" cols="60" rows="15" readonly></textarea><br>
+            <label for="text">Learning Rate:</label><input id="rate" name="rate" type="text" value="0.8" disabled><br>
+            <label>Condition:</label>
+            <!-- <input id="condition-rd" name="condition" type="radio" checked> -->
+            <label for="condition-rd">Rounds</label>
+            <input id="condition-rd-value" name="condition-rd" value="100" type="text">
+            <!-- <input id="condition-acc" name="condition" type="radio"> -->
+            <label for="condition-eav">Eav</label>
+            <input id="condition-eav-value" name="condition-eav" value="0.001" type="text"><br> 
+         
+            <button id="init">Init</button><button id="train">Train</button><button id="test">Test</button><button id="clear">Clear</button><br><br><br>
+        </div>
+    </div>
+    <script src="mlp.js"></script>
+</body>
+</html>
